@@ -1,0 +1,10 @@
+.header-container{
+    margin: 0;
+    padding: 0;
+    background: purple;
+}
+
+.header-items{
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,19 @@
+.list-view-container{
+    padding: 10px;
+    margin: 10px;
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listview-name{
+    list-style-type: none;
+}
+
+.listview-buttons{
+    display: grid;
+}
+
+.listview-buttons button{
+    margin: 5px;
+}
