@@ -1,14 +1,13 @@
 import React from 'react'
+import {useHistory} from 'react-router-dom'
 import './NewItemView.css'
 
-function NewItemView({itemList, setItemList}) {
+function NewItemView({itemList, setItemList, newItem, setNewItem}) {
+    const history = useHistory();
 
     const saveHandler = (ev) => {
         ev.preventDefault()
         console.log("this is the save button")
-        console.log(ev.target.framework.value)
-        console.log(ev.target.url.value)
-        console.log(ev.target.lead.value)
 
         setItemList([...itemList, {
             id: Math.floor(Math.random() * 1000),
@@ -17,8 +16,11 @@ function NewItemView({itemList, setItemList}) {
             lead: ev.target.lead.value
         }])
 
+        history.push('/')
+    }
 
-        
+    const test = (ev) =>{
+        console.log(history)
     }
 
     const cancelHandler = (ev) =>{
@@ -47,7 +49,9 @@ function NewItemView({itemList, setItemList}) {
 
                     <div className="form-button">
                         <div className="button-container">
-                            <button type="submit" >Save</button>
+                            {/* <Link to="/">  */}
+                                <button onClick={test} type="submit" > omae wa</button>
+                            {/* </Link> */}
                             <button type="cancel" onClick={cancelHandler} >Cancel</button>
                         </div>
                     </div>

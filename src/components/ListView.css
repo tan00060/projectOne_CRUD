@@ -1,13 +1,15 @@
 .list-view-container{
     padding: 10px;
     margin: 10px;
-    background-color: grey;
-    display: flex;
-    justify-content: space-between;
+    /* background-color: grey; */
+    display: grid;
 }
 
 .listview-name{
     list-style-type: none;
+    display: inline-flex;
+    justify-content: space-between;
+    border-bottom: solid 1px lightgray;
 }
 
 .listview-buttons{

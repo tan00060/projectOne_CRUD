@@ -13,19 +13,20 @@ function ListView( {itemList} ) {
     return (
         <div className="list-view-container">
 
-            <div className="listview-name">{itemList && itemList.map(list =>(
-                    <li>
+
+            {itemList && itemList.map(list =>(
+                <div key={list.id} className="listview-name">
+                      <li id={list.id}>
                         <p>{list.framework}</p>
                         <p>{list.url}</p>
                         <p>{list.lead}</p>
                     </li>
-                ))}
-
-                <div className="listview-buttons">
-                    <button onClick={editButtonHandler} >edit</button>
-                    <button onClick={deleteButtonHandler} >delete</button>
+                    <div className="listview-buttons">
+                        <button onClick={editButtonHandler} >edit</button>
+                        <button onClick={deleteButtonHandler} >delete</button>
+                    </div>
                 </div>
-            </div>
+            ))}
         </div>
     )
 }
