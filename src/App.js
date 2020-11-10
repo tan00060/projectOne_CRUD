@@ -9,7 +9,6 @@ import NewItemView from './components/NewItemView'
 
 function App() {
   
-  
   const [itemList, setItemList] = useState([])
   
   useEffect( () =>{
@@ -30,7 +29,6 @@ function App() {
       localStorage.setItem('listItems', JSON.stringify([]))
     }else{
       let getLocalStorage = JSON.parse(localStorage.getItem('listItems'))
-      console.log(getLocalStorage)
       setItemList(getLocalStorage)
     }
   }
@@ -42,16 +40,19 @@ function App() {
       <div>
         <Switch>
 
-          <route exact path="/">
-            <ListView itemList={itemList} />
-          </route>
+          <Route exact path="/">
+            <ListView
+              itemList={itemList}
+              setItemList={setItemList}
+            />
+          </Route>
 
-          <route exact path="/new_item">
+          <Route exact path="/new_item">
             <NewItemView 
               itemList={itemList}
               setItemList={setItemList}
             />
-          </route>
+          </Route>
 
         </Switch>
       </div>

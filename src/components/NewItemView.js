@@ -2,7 +2,7 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import './NewItemView.css'
 
-function NewItemView({itemList, setItemList, newItem, setNewItem}) {
+function NewItemView({itemList, setItemList}) {
     const history = useHistory();
 
     const saveHandler = (ev) => {
