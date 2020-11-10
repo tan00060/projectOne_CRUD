@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import './AppHeader.css'
 
 function AppHeader() {
@@ -6,8 +7,8 @@ function AppHeader() {
         <header className="header-container">
                 <div className="header-items">
                     <h1>img</h1>
-                    <h1>Javascript Frameworks</h1>
-                    <button>+ New Item</button>
+                    <NavLink className="newItem" to="/">Javascript Frameworks</NavLink>
+                    <NavLink className="newItem" to="/new_item">+ New Item</NavLink>
                 </div>
         </header>
     )

@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+
 import './App.css';
 
 import ListView from'./components/ListView'
@@ -6,15 +8,33 @@ import AppHeader from './components/AppHeader'
 import NewItemView from './components/NewItemView'
 
 function App() {
+  
 
   const [itemList, setItemList] = useState([])
+  const [newItem, setNewItem] = useState([])
 
   return (
-    <div className="App">
+    <Router>
       <AppHeader/>
-      <NewItemView itemList={itemList} setItemList={setItemList} />
-      <ListView itemList={itemList} />
-    </div>
+      <div>
+        <Switch>
+
+          <route exact path="/">
+            <ListView itemList={itemList} />
+          </route>
+
+          <route exact path="/new_item">
+            <NewItemView 
+              itemList={itemList}
+              setItemList={setItemList}
+              newItem={newItem}
+              setNew={setNewItem}
+            />
+          </route>
+
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
