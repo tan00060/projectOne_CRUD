@@ -1,7 +1,6 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
 import './NewItemView.css'
-import cuid from 'cuid';
 import {Button, TextField} from '@material-ui/core'
 
 

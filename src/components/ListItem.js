@@ -1,5 +1,4 @@
 import React from 'react'
-import NewItemView from './NewItemView'
 import EditView from './EditView'
 import './ListItem.css'
 import {Button, Typography} from '@material-ui/core'
