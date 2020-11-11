@@ -12,4 +12,11 @@
 .newItem{
     font-size: 2rem;
     color: white;
+    text-decoration: none;
+    margin: auto;
+    padding: 10px;
+}
+
+.header-items h1{
+    color: black;
 }
