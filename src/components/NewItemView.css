@@ -6,6 +6,7 @@
     padding: 10px;
     margin: 10px;
     border-bottom: 1px solid grey;
+    text-align: center;
 }
 
 .label-view{
@@ -21,8 +22,19 @@
 }
 
 .button-container button{
-    padding: 5px;
     margin: 4px;
+    background-color: white;
+    border-radius: 15%;
+}
+
+.save-btn{
+    color: #0e9696;
+    border: 1px solid #0e9696;
+}
+
+.cancel-btn{
+    color: #326d6d;
+    border: 1px solid #326d6d;
 }
 
 .labels{

@@ -1,37 +1,43 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
 import './NewItemView.css'
+import cuid from 'cuid';
 
 function NewItemView({itemList, setItemList}) {
     const history = useHistory();
+    var cuid = require('cuid');
+
+    const cancelRef = React.useRef()
 
     const saveHandler = (ev) => {
         ev.preventDefault()
         console.log("this is the save button")
-
-        setItemList([...itemList, {
-            id: Math.floor(Math.random() * 1000),
-            framework: ev.target.framework.value,
-            url: ev.target.url.value,
-            lead: ev.target.lead.value
-        }])
-
-        history.push('/')
-    }
-
-    const test = (ev) =>{
-        console.log(history)
+        if(ev.target.framework.value === "" || ev.target.url.value === "" || ev.target.lead.value === ""){
+            console.log("empty")
+            alert("plz fill out")
+        }else{
+            console.log("not empty")
+            setItemList([...itemList, {
+                id: cuid(),
+                framework: ev.target.framework.value,
+                url: ev.target.url.value,
+                lead: ev.target.lead.value
+            }])
+    
+            history.push('/')
+        }
     }
 
     const cancelHandler = (ev) =>{
         ev.preventDefault()
+        cancelRef.current.reset()
         console.log("this will cancel new item")
     }
 
     return (
         <div>
             <div className="newitem-form">
-                <form onSubmit={saveHandler}>
+                <form ref={cancelRef} onSubmit={saveHandler}>
                     <div className="label-view">
                         <div className="labels">
                             <label htmlFor="framework" >framework</label>
@@ -49,10 +55,8 @@ function NewItemView({itemList, setItemList}) {
 
                     <div className="form-button">
                         <div className="button-container">
-                            {/* <Link to="/">  */}
-                                <button onClick={test} type="submit" > omae wa</button>
-                            {/* </Link> */}
-                            <button type="cancel" onClick={cancelHandler} >Cancel</button>
+                            <button className="save-btn" type="submit" > save </button>
+                            <button className="cancel-btn" type="cancel" onClick={cancelHandler} >Cancel</button>
                         </div>
                     </div>
 
