@@ -4,8 +4,10 @@
 
 .listview-buttons button{
     margin: 5px;
-    background-color: white;
-    border-radius: 15%;
+}
+
+.listview-buttons{
+    margin-bottom: 10px;
 }
 
 .list-view-container{
@@ -25,7 +27,11 @@
     display: flex;
 }
 
-p{
-    margin: 10px;
+.MuiTypography-h6{
+    padding: 10px !important;
+}
+
+.MuiTypography-h4{
+    padding-left: 10px !important;
 }
 

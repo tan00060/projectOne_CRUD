@@ -11,27 +11,27 @@ function App() {
   
   const [itemList, setItemList] = useState([])
   
-  useEffect( () =>{
+  React.useEffect( () =>{
+    const getLocalStorage = () => {
+      if(localStorage.getItem('listItems') === null){
+        localStorage.setItem('listItems', JSON.stringify([]))
+      }else{
+        let getLocalStorage = JSON.parse(localStorage.getItem('listItems'))
+        setItemList(getLocalStorage)
+      }
+    }
+  
     console.log("this is where i get my local storage")
     getLocalStorage()
   },[])
 
-  useEffect( () =>{
+  React.useEffect( () =>{
+    const saveLocalStorage = () =>{
+      localStorage.setItem('listItems', JSON.stringify(itemList))
+    }
     saveLocalStorage()
   },[itemList])
 
-  const saveLocalStorage = () =>{
-    localStorage.setItem('listItems', JSON.stringify(itemList))
-  }
-
-  const getLocalStorage = () => {
-    if(localStorage.getItem('listItems') === null){
-      localStorage.setItem('listItems', JSON.stringify([]))
-    }else{
-      let getLocalStorage = JSON.parse(localStorage.getItem('listItems'))
-      setItemList(getLocalStorage)
-    }
-  }
 
 
   return (

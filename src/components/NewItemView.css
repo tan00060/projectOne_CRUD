@@ -13,28 +13,20 @@
     display: inline-grid;
 }
 
+.label-view div{
+    margin: 3px;
+}
+
+.button-container button{
+    margin: 5px;
+}
 .form-button{
     display: inline-grid;
 }
 
 .button-container{
     display: inherit;
-}
-
-.button-container button{
-    margin: 4px;
-    background-color: white;
-    border-radius: 15%;
-}
-
-.save-btn{
-    color: #0e9696;
-    border: 1px solid #0e9696;
-}
-
-.cancel-btn{
-    color: #326d6d;
-    border: 1px solid #326d6d;
+    position: fixed;
 }
 
 .labels{

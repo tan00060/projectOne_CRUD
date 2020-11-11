@@ -2,9 +2,10 @@ import React from 'react'
 import NewItemView from './NewItemView'
 import EditView from './EditView'
 import './ListItem.css'
+import {Button, Typography} from '@material-ui/core'
+
 
 function ListItem( {itemList, setItemList, framework, lead, url, id, list}) {
-
     const [display, setDisplay] = React.useState(false)
 
     const editButtonHandler = () => {
@@ -13,8 +14,6 @@ function ListItem( {itemList, setItemList, framework, lead, url, id, list}) {
     }
 
     const deleteButtonHandler = (ev) => {
-        // let id = parseInt(ev.target.id)
-        let id = ev.target.id
         setItemList(itemList.filter((item) => item.id !== id))
     }
 
@@ -30,21 +29,21 @@ function ListItem( {itemList, setItemList, framework, lead, url, id, list}) {
                         itemList={itemList}
                         setItemList={setItemList}
                     />:(
-                        <div className="list-view-container">
-                        <div key={id} className="listview-name">
-                            <li>
-                                <p>{framework}</p>
-                                <div className="url-lead">
-                                    <p>{url}</p>
-                                    <p>{lead}</p>                            
+                        <div key={list.id} className="list-view-container">
+                            <div key={list.id} className="listview-name">
+                                <li key={list.id}>
+                                    <Typography variant="h4" align="justify" color="textPrimary" >{framework}</Typography>
+                                    <div className="url-lead">
+                                        <Typography classname="make-space" variant="h6" color="textSecondary" >{url}</Typography>
+                                        <Typography classname="make-space" variant="h6" color="textSecondary" >{lead}</Typography>                            
+                                    </div>
+                                </li>
+                                <div className="listview-buttons">
+                                    <Button size="small" variant="outlined" color="primary" onClick={editButtonHandler} >edit</Button>
+                                    <Button size="small" variant="outlined" color="secondary" id={id} onClick={deleteButtonHandler} >delete</Button>
                                 </div>
-                            </li>
-                            <div className="listview-buttons">
-                                <button className="save-btn" onClick={editButtonHandler} >edit</button>
-                                <button className="cancel-btn" id={id} onClick={deleteButtonHandler} >delete</button>
-                            </div>
-                        </div>                
-                </div>
+                            </div>                
+                        </div>
         )}
         </>
     )
