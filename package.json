@@ -15,10 +15,7 @@
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
-  "homepage": "https://tan00060.github.io/projectOne_CRUD",
   "scripts": {
-    "predeploy":"yarn run build",
-    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
