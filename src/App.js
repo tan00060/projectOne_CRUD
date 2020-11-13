@@ -11,7 +11,6 @@ function App() {
   
   const [itemList, setItemList] = useState([])
   
-
   //this is our local storage
   //getting local storage at the start of our application to set to our itemList state
   //if we have nothing in our local storage we will set it to an empty []
@@ -27,7 +26,6 @@ function App() {
     getLocalStorage()
   },[])
 
-
   //this is were we will set our local storage
   //everytime there is a change to itemList, we will update it to the new itemList
   React.useEffect( () =>{
@@ -36,8 +34,6 @@ function App() {
     }
     saveLocalStorage()
   },[itemList])
-
-
 
   return (  
     <Router>
