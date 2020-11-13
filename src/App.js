@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, Suspense} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import './App.css';
 
-import ListView from'./components/ListView'
-import AppHeader from './components/AppHeader'
-import NewItemView from './components/NewItemView'
+const ListView = React.lazy( () => import('./components/ListView'))
+const AppHeader = React.lazy( () => import('./components/AppHeader'))
+const NewItemView = React.lazy(() => import('./components/NewItemView'))
 
 function App() {
   
@@ -39,28 +39,30 @@ function App() {
 
 
 
-  return (
+  return (  
     <Router>
+      <Suspense fallback={<div>Loading...</div>}>
       <AppHeader/>
-      <div className="header-top-padding">
-        <Switch>
+        <div className="header-top-padding">
+          <Switch>
 
-          <Route exact path="/">
-            <ListView
-              itemList={itemList}
-              setItemList={setItemList}
-            />
-          </Route>
+            <Route exact path="/">
+              <ListView
+                itemList={itemList}
+                setItemList={setItemList}
+              />
+            </Route>
 
-          <Route exact path="/new_item">
-            <NewItemView 
-              itemList={itemList}
-              setItemList={setItemList}
-            />
-          </Route>
+            <Route exact path="/new_item">
+              <NewItemView 
+                itemList={itemList}
+                setItemList={setItemList}
+              />
+            </Route>
 
-        </Switch>
-      </div>
+          </Switch>
+        </div>
+      </Suspense>
     </Router>
   );
 }

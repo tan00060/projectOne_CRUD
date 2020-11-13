@@ -1,6 +1,6 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
 import './EditView.css'
+import {useHistory} from 'react-router-dom'
 import {Button, TextField} from '@material-ui/core'
 
 function EditView( {itemList, setItemList, framework, url, lead, id, list, setDisplay} ) {
