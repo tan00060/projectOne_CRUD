@@ -11,6 +11,10 @@ function App() {
   
   const [itemList, setItemList] = useState([])
   
+
+  //this is our local storage
+  //getting local storage at the start of our application to set to our itemList state
+  //if we have nothing in our local storage we will set it to an empty []
   React.useEffect( () =>{
     const getLocalStorage = () => {
       if(localStorage.getItem('listItems') === null){
@@ -20,11 +24,12 @@ function App() {
         setItemList(getLocalStorage)
       }
     }
-  
-    console.log("this is where i get my local storage")
     getLocalStorage()
   },[])
 
+
+  //this is were we will set our local storage
+  //everytime there is a change to itemList, we will update it to the new itemList
   React.useEffect( () =>{
     const saveLocalStorage = () =>{
       localStorage.setItem('listItems', JSON.stringify(itemList))
@@ -37,7 +42,7 @@ function App() {
   return (
     <Router>
       <AppHeader/>
-      <div>
+      <div className="header-top-padding">
         <Switch>
 
           <Route exact path="/">

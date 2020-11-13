@@ -1,16 +1,23 @@
+@media screen and (max-width: 600px){
+  .header-items{
+    position: fixed;
+    background-color: purple;
+    z-index: 999;
+    width: 100%;
+    height: 85px;
+  }
+
+  .header-top-padding{
+    padding-top: 65px !important;
+  }
+
+  img{
+    margin-top: 5px;
+  }
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {

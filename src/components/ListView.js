@@ -15,6 +15,7 @@ function ListView( {itemList, setItemList} ) {
                         lead={list.lead}
                         id={list.id}
                         list={list}
+                        key={list.id}
                     />
                 ))}
         </div>

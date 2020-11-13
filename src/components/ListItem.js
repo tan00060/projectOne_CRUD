@@ -7,15 +7,23 @@ import {Button, Typography} from '@material-ui/core'
 function ListItem( {itemList, setItemList, framework, lead, url, id, list}) {
     const [display, setDisplay] = React.useState(false)
 
+    //this function sets our edit view for the user.
+    //by default it is set to false, to hide it from the user
+    //when we set this value to true, it will show up onto the page for the user to edit the list item
     const editButtonHandler = () => {
-        console.log("this will be the edit button")
         setDisplay(true)
     }
 
+    //this is our delete function
+    //we take our use state and filter it by finding the item has has the same item
+    //if the id's are exact we remove it and set it to the new itemList
     const deleteButtonHandler = (ev) => {
         setItemList(itemList.filter((item) => item.id !== id))
     }
 
+    //we use a ternary operator here to set the view of our list item view
+    //if true, we show the edit view for the user so that they edit the selected list item
+    //if false, we will append the the list item like normal
     return (
         <>
         {display ? <EditView 

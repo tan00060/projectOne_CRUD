@@ -10,27 +10,29 @@ function NewItemView({itemList, setItemList}) {
 
     const cancelRef = React.useRef()
 
+
+    //this function allows us to save our new item into our itemList state
+    //we take our old item and append our new object into it setting a new itemList state
+    //we then go back to our old page when the user saves.
     const saveHandler = (ev) => {
         ev.preventDefault()
-        console.log("this is the save button")
-        console.log("not empty")
-        console.log(ev.target.framework.value)
-
         setItemList([...itemList, {
             id: cuid(),
             framework: ev.target.framework.value,
             url: ev.target.url.value,
             lead: ev.target.lead.value
         }])
-
         history.push('/')
     }
 
+
+    //this function allows us to cancel
+    //we have a reference to our cancel button called cancelRef
+    //when the user clicks it will reset our form and push us back to the main page.
     const cancelHandler = (ev) =>{
         ev.preventDefault()
         cancelRef.current.reset()
         history.push('/')
-        console.log("this will cancel new item")
     }
 
     return (
@@ -43,21 +45,24 @@ function NewItemView({itemList, setItemList}) {
                             label="Framework"
                             variant="outlined"
                             className="labels"
-                            id="framework">
+                            id="framework"
+                            size="small">
                         </TextField>
                         <TextField 
                             required 
                             label="URL" 
                             variant="outlined" 
                             className="labels"
-                            id="url">
+                            id="url"
+                            size="small">
                         </TextField>
                         <TextField
                             required
                             label="Lead"
                             variant="outlined"
                             className="labels"
-                            id="lead">
+                            id="lead"
+                            size="small">
                         </TextField>
                     </div>
 
