@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import './ListView.css'
-const ListItem = React.lazy( ()=>('./ListItem') )
+const ListItem = React.lazy( ()=> import('./ListItem') )
 
 function ListView( {itemList, setItemList} ) {
     
