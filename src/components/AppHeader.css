@@ -1,7 +1,7 @@
 @media screen and (max-width: 600px){
     .newItem{
-        font-size: 1.3rem !important;
-    }
+        font-size: 13px !important;
+        margin-top: 36px !important;    }
 
     img{
         width: 70px !important;
@@ -17,6 +17,8 @@ img{
 }
 
 .header-container{
+    display: flex;
+    justify-content: space-around;
     position: fixed;
     background-color: purple;
     z-index: 999;
@@ -38,8 +40,8 @@ img{
     font-size: 2rem;
     color: white;
     text-decoration: none;
-    margin: auto;
-    padding: 10px;
+    margin-top: 30px;
+    margin-right: 10px;
 }
 
 .header-items h1{
