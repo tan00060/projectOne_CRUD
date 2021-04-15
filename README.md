@@ -32,8 +32,8 @@ yarn install
 ```
 yarn start
 ```
-#Contact
+# Contact
 
-**Contact Information** [Michael Tan](mailto:tan00060@algonquinlive.com)
+If you have any questions you can reach me at: **Contact Information** [Michael Tan](mailto:tan00060@algonquinlive.com)
 
 
